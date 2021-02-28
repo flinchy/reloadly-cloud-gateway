@@ -16,10 +16,12 @@ spring:
           predicates:
             - Path=/transaction/**
 
+eureka-server-host: reloadly-eureka-server.herokuapp.com
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_SERVER_URL:https://reloadly-eureka-server.herokuapp.com/eureka}
+      defaultZone: ${EUREKA_SERVER_URL:${eureka-server-host}/eureka}
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
@@ -28,6 +30,7 @@ eureka:
 
 security:
   signing-key: <signing-key>
+
 
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
