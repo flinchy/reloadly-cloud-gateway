@@ -25,7 +25,7 @@ public class CloudServiceImpl{
     /**
      * ping url every 30min to keep alive
      */
-    @Scheduled(cron = "* * * * *")
+    @Scheduled(cron = "*/10 * * * *")
     public void health() {
         try {
             restTemplate.getForObject(cloudGatewayHost, Object.class);
