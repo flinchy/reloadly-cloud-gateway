@@ -28,7 +28,6 @@ public class CloudServiceImpl {
     /**
      * ping url to keep alive
      */
-    @Async
     @Scheduled(fixedRate = 1000)
     public void health() {
         try {
