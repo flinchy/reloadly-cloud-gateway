@@ -3,6 +3,7 @@ package com.chisom.cloudgateway.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -27,7 +28,8 @@ public class CloudServiceImpl {
     /**
      * ping url every 30min to keep alive
      */
-    @Scheduled(cron = "*/2 * * * *")
+    @Async
+    @Scheduled(fixedRate = 1000)
     public void health() {
         try {
             CompletableFuture.runAsync(() ->
