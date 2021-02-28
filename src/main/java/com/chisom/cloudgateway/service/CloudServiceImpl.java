@@ -19,7 +19,7 @@ public class CloudServiceImpl {
 
     public CloudServiceImpl(
             RestTemplate restTemplate,
-            @Value("${cloud-gateway-host}") String cloudGatewayHost
+            @Value("${cloud-gateway-health}") String cloudGatewayHost
     ) {
         this.restTemplate = restTemplate;
         this.cloudGatewayHost = cloudGatewayHost;
