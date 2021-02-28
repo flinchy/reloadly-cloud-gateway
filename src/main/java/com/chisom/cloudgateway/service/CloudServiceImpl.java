@@ -26,7 +26,7 @@ public class CloudServiceImpl {
     }
 
     /**
-     * ping url every 30min to keep alive
+     * ping url every 5min to keep alive
      */
     @Async
     @Scheduled(fixedRate = 300000)
