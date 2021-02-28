@@ -19,7 +19,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_SERVER_URL:https://reloadly-eureka-server.herokuapp.com/eureka} #"http://${app.eureka-server}:8761/eureka/"
+      defaultZone: ${EUREKA_SERVER_URL:https://reloadly-eureka-server.herokuapp.com/eureka}
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
