@@ -21,7 +21,7 @@ cloud-gateway-host: https://reloadly-cloud-gateway.herokuapp.com
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_SERVER_URL:reloadly-eureka-server.herokuapp.com/eureka}
+      defaultZone: ${EUREKA_SERVER_URL:https://reloadly-eureka-server.herokuapp.com/eureka}
     initialInstanceInfoReplicationIntervalSeconds: 5
     registryFetchIntervalSeconds: 5
   instance:
