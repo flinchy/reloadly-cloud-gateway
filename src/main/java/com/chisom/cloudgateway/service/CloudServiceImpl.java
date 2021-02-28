@@ -7,8 +7,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service
-public class CloudServiceImpl{
+public class CloudServiceImpl {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     private final RestTemplate restTemplate;
@@ -28,7 +30,8 @@ public class CloudServiceImpl{
     @Scheduled(cron = "*/2 * * * *")
     public void health() {
         try {
-            restTemplate.getForObject(cloudGatewayHost, Object.class);
+            CompletableFuture.runAsync(() ->
+                    restTemplate.getForObject(cloudGatewayHost, Object.class));
         } catch (Exception e) {
             log.error("caught an exception :::", e);
         }
