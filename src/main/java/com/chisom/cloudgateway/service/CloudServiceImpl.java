@@ -26,10 +26,10 @@ public class CloudServiceImpl {
     }
 
     /**
-     * ping url to keep alive
+     * ping url every 5min to keep alive
      */
     @Async
-    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 300000)
     public void health() {
         try {
             CompletableFuture.runAsync(() ->

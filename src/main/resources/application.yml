@@ -16,7 +16,7 @@ spring:
           predicates:
             - Path=/transaction/**
 
-cloud-gateway-health: https://reloadly-cloud-gateway.herokuapp.com
+cloud-gateway-health: https://reloadly-cloud-gateway.herokuapp.com/actuator/health
 
 eureka:
   client:
