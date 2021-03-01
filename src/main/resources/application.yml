@@ -7,12 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: account-service
-          uri: lb://account-service
+        - id: https://reloadly-account-service.herokuapp.com/
+          uri: lb://https://reloadly-account-service.herokuapp.com/
           predicates:
             - Path=/account/**
-        - id: transaction-service
-          uri: lb://transaction-service
+        - id: https://reloadly-transaction-service.herokuapp.com/
+          uri: lb://https://reloadly-transaction-service.herokuapp.com/
           predicates:
             - Path=/transaction/**
 
